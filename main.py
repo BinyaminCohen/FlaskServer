@@ -4,6 +4,7 @@ from multiprocessing import Value
 counter = Value('i', 0)
 app = Flask(__name__)
 
+
 @app.route('/count')
 def index():
     with counter.get_lock():
